@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build-prod": "ng build --configuration=prodction --output-path docs --base-href /calcprep/",
+    "build-prod": "ng build --output-path docs --base-href /CalcPrep/",
     "serve-prod": "lite-server --baseDir='docs'"
   },
   "private": true,
