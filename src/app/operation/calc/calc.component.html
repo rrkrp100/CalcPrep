@@ -1,1 +1,41 @@
-<p>calc works!</p>
+<div class="pagecontainer">
+  <div class="optionSelectors">
+
+    <mat-form-field class="options">
+      <mat-label>Operands</mat-label>
+      <mat-select matNativeControl 
+        [disabled]="disableDropDown"
+        (valueChange)="updateNumberOfOperands($event)"
+      >
+        @for (num of [2,3,4,5,6,7,8,9,10]; track num) {
+        <mat-option [value]="num">{{ num }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="options">
+      <mat-label>Difficulty</mat-label>
+      <mat-select
+        [disabled]="disableDropDown"
+        (valueChange)="updateDifficulty($event)"
+      >
+        @for (num of [2,3,4]; track num) {
+        <mat-option [value]="num">{{ num }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <div class="numberContainer">
+    <div class="numbers" *ngFor="let item of displayItems">{{ item }}</div>
+  </div>
+  <div class="actionButtons">
+    <button mat-raised-button color="primary" (click)="showAnswer()">
+      Show Answer
+    </button>
+    <button mat-raised-button color="accent" (click)="nextQuestion()">
+      Next Question
+    </button>
+  </div>
+  <div *ngIf="isAnswerVisible" class="answer">Answer: {{ answer }}</div>
+</div>

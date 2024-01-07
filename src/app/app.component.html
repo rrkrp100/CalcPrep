@@ -1,7 +1,7 @@
 
 
 <div class="head">
-  <mat-button-toggle-group  class="math-toggle-box" name="pratice" aria-label="practice math">
+  <mat-button-toggle-group  class="math-toggle-box" name="pratice" aria-label="practice math" (change)="OnOperationchange($event)">
     <mat-button-toggle class="math-choice" value="Addition">Addition</mat-button-toggle>
     <mat-button-toggle class="math-choice" value="Substraction">Substraction</mat-button-toggle>
     <mat-button-toggle class="math-choice" value="Multiplication">Multiplication</mat-button-toggle>
@@ -10,8 +10,5 @@
 </div>
 
 
-<div class="container">
-  <div><p class="choice">Content</p></div>
-  <app-calc></app-calc>
-  <router-outlet></router-outlet>
-</div>
+
+<app-calc class="container" operationType={{currentOperation}}></app-calc>

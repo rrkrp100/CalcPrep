@@ -2,13 +2,12 @@
     display: flex; 
     justify-content: center; 
     align-content: center;
-    
+    padding: 12px;
 }
 .container{
-    display: flex; 
-    justify-content: center;
-    align-items: center;
+    display: flex;
     height: 100%;
+    justify-content: center;
 }
 
 .math-toggle-box{
